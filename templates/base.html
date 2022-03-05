@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libry</title>
+
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
+    
+  
+
+<!--
+    <script>/* Open when someone clicks on the span element */
+        function openNav() {
+          document.getElementById("myNav").style.width = "100%";
+        }
+        
+        /* Close when someone clicks on the "x" symbol inside the overlay */
+        function closeNav() {
+          document.getElementById("myNav").style.width = "0%";
+        }
+    </script>-->
+</head>
+<body>
+    <header>
+        <nav>
+
+            <a href="{% url 'index' %}"><img style="height: 60px;width: 160px;" src="{% static 'images/logo.png' alt="logo" %}"></a>
+            
+              <div class="dropdown">
+                <button onclick ="openNav()"  class="dropbtn"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#000" class="bi-list" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                  </svg></button>
+              </div>
+              <div class="navDesktop">
+                <a href="{% url 'index' %}">Home</a>
+                <a href="{% url 'upload' %}">Upload</a>
+                <!--<a href="#">Contribute</a>-->
+                <a href="{% url 'profile' %}">Profile</a>
+                <a href="{% url 'libry' %}">Login</a>
+              </div>
+
+
+        </nav>
+        
+    </header>
+
+    <main>
+        
+    
+
+<!-- The overlay -->
+<div id="myNav" class="overlay">
+
+    <!-- Button to close the overlay navigation -->
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  
+    <!-- Overlay content -->
+    <div class="overlay-content">
+      <a href="{% url 'index' %}">Home</a>
+                <a href="{% url 'upload' %}">Upload</a>
+            <!--<a href="#">Contribute</a>-->
+                <a href="{% url 'libry' %}">Login</a>
+    </div>
+  
+</div>
+
+
+
+{% block content %} {% endblock %}
+
+
+
+
+    </main>
+    <footer>
+        <div>
+            W3Schools is optimized for learning and training. 
+            Examples might be simplified to improve reading and learning. 
+            Tutorials, references, and examples are constantly reviewed to 
+            avoid errors, but we cannot warrant full correctness of all content. 
+            While using W3Schools, you agree to have read and accepted our terms
+             of use, cookie and privacy policy.
+        </div>
+        <div>
+            Copyright 1999-2022 by Refsnes Data. All Rights Reserved.
+W3Schools is Powered by W3.CSS.
+        </div>
+        <img class="ftImage" src="{% static 'images/logo.png' alt="logo" %}">
+
+        
+    </footer>
+</body>
+
+
+
+<style>
+</style>
+</html>

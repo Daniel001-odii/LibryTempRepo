@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class="container">
+    <div class="bookContent">
+        <span>Profile</span>
+        <span class="profileImage"></span>
+        <div class="nameInfo">
+            <input placeholder="first name" type="username"><input placeholder="last name"type='username'>
+        </div>
+        <input type="email" style="color:#000" class="bookTitle" value="John Doe">
+        <input type="email" style="color:#000" class="bookTitle" value="example@email.com" disabled>
+
+        <input type="text" class="bookTitle" placeholder="School">
+        <input type="textarea" class="bookTitle" placeholder="About">
+     
+        
+        <input type="button" class="uploadBtn" value="Save">
+    </div>
+</div>
+
+<style>
+
+</style>
+
+{% endblock %}

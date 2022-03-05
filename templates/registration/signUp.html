@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="form-container">
+        <div class="form-nav">
+            <span class="login notactivePane"><a href="{% url 'libry' %}">Login</a></span>
+            <span class="signUp "><a href="{% url 'signUp' %}">Sign Up</a></span> 
+        </div>
+        <div class="form">
+        <input class="username" placeholder="Username" type="username" name="username">
+        <input class="username" placeholder="Email" type="email" name="email">
+        <input class="password" placeholder="password" type="password" name="password">
+        <input class="password" placeholder="confirm" type="password" name="password">
+
+        <!--<i class="bi bi-eye-fill" cursor: pointer;></i>-->
+            <div class="sub"> 
+                <span><input type="checkbox">Remember me</span>
+                
+            </div>
+        <button class="form-button">Sign Up</button>
+        <span style="color:#fff">have an account already? <a href="{% url 'libry' %}">Login</a></span>
+        </div>
+    </div>
+
+
+
+<style>
+
+</style>
+
+<script>
+    function toggle() {
+        var x = document.getElementById("myInput");
+        if (x.type === "password") {
+          x.type = "text";
+        } else {
+          x.type = "password";
+        }
+      }
+</script>
+{% endblock %}
+
+

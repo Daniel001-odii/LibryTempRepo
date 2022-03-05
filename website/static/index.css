@@ -1,0 +1,491 @@
+*{
+    box-sizing: border-box;
+}
+html, body{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    display: grid;
+    grid-template-areas:"head head"
+                        "main main" 
+                        "footer footer";
+    grid-template-rows: 100px 1fr 1fr;
+    height: 100vh;
+    width: 100%;
+}
+
+header{
+    grid-area: head;
+    background: linear-gradient(0deg,#e7e7e7 5%,  #ffffff 60%);
+    display: flex;
+    
+    justify-content: center;
+    padding: 10px;
+    position: fixed;
+    box-shadow: 0px 2px 8px #c4c4c4;
+    width: 100%;
+}
+
+/*
+.navImage{
+    height: 60px;
+    width: 160px;
+}*/
+
+nav{
+   
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+nav:hover .navItems{
+    height: 300px;
+}
+nav:hover .navItems > span{
+    display: block;
+}
+
+main{
+    grid-area: main;
+    /*background: url(images/bg.png);*/
+    background: #ffffff;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+
+.navItems{
+    display: flex;
+    flex-direction: column;
+    height: 0px;
+    
+}
+.navItems > span{
+    background: rgb(235, 235, 235);
+    font-size: 20px;
+    padding: 20px;
+    width: 100%;
+    border-top: 3px #fff;
+    border-bottom: 2px #fff;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   
+}
+
+
+.container{
+    margin-top: 20px;
+   display: flex;
+   flex-direction: column;
+   /*background: url(images/topImage.png);
+   background-color: #e7e7e7;*/
+   background-position: center;
+   background-size: cover;
+   align-items: center;
+}
+
+
+.search{
+    font-size: 15px;
+    border: none;
+    padding: 5px;
+    background: #e7e7e7;
+    border-radius: 10px 0 0 10px;
+    outline: none;
+}
+.search:hover{
+    border: 2px solid #0bad85;
+}
+
+.searchBox{
+    display: grid;
+    grid-template-areas: "input btn";
+    grid-template-rows: "1fr 25px";
+}
+.searchBox{
+    grid-area: input;
+    //background: red;
+}
+.searchBox > button{
+    grid-area: btn;
+    background: #0bad85;
+    color: #fff;
+    border: none;
+    padding: 5px;
+    border-radius: 0 10px 10px 0;
+}
+
+.Content{
+    padding: 30px;
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   /* background: gold;*/
+}
+
+.cover{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+.cover > span{
+    margin: 0 auto;
+    font-size: 20px;
+   
+}
+.uploads{
+    display: flex;
+    margin-top: 5px !important;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    //background: #e7e7e7;
+    padding: 15px;
+    width: 90%;
+    margin: 0 auto;
+}
+.card{
+    height: 200px;
+    width: 150px;
+    /*box-shadow: 3px 3px 6px rgb(219, 219, 219);*/
+    border-radius: 5px;
+    background: #ffffff;
+    margin: 10px;
+    flex: 30%;
+    display: grid;
+    grid-template-areas: "preview"
+                        "details";
+    grid-template-rows: 2fr 50px;
+    
+}
+.card > span{
+    background: #ec9f10;
+}
+.card:hover{
+    /*border: 2px solid #fdfdfd;*/
+    box-shadow:  0px 6px 10px #afafaf;
+}
+.preview{
+    grid-area: preview;
+    background: #e7e7e7;
+}
+
+.bookTitle{
+    color: #fff;
+    font-size: 20px;
+    padding: 5px;
+    grid-area: details;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+
+
+
+
+footer{
+    grid-area: footer;
+    background: #25055f;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+footer > span{
+    margin: 6px;
+}
+.ftImage{
+    height: 80px;
+    width: 200px;
+    margin: 0 auto;
+    
+  
+}
+
+/* The Overlay (background) */
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+    height: 100%;
+    width: 0;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: rgb(0,0,0); /* Black fallback color */
+    background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+  }
+  
+  /* Position the content inside the overlay */
+  .overlay-content {
+    position: relative;
+    top: 25%; /* 25% from the top */
+    width: 100%; /* 100% width */
+    text-align: center; /* Centered text/links */
+    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+  }
+  
+
+  /* The navigation links inside the overlay */
+  .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #ec9f10;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+  }
+  
+  /* Position the close button (top right corner) */
+  .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+  }
+  
+  /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+  @media screen and (max-height: 450px) {
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+      font-size: 40px;
+      top: 15px;
+      right: 35px;
+    }
+  }
+  
+  @media screen and (min-width: 600px){
+      .uploads{
+          width: 800px;
+      }
+      .card{
+          width: 250px;
+          height: 320px;
+      }
+      .dropdown{
+          display:none;
+      }
+      .navDesktop{
+          display: flex !important;
+          flex-direction: row;
+          justify-content: space-around;
+          padding: 10px;
+         
+      }
+  }
+
+
+  .navDesktop{
+      display: none;
+      width: 500px;
+  }
+
+  .navDesktop > a{
+      text-decoration: none;
+      color: #000000;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      //border: 2px solid red;
+      padding: 10px !important;
+      
+     
+  }
+  .navDesktop > a:hover{
+      border-bottom: 2px solid #ec9f10;
+                                             
+  }                         
+
+  .bookContent{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      
+  }
+.bookContent > span{
+    font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    margin: 10px;
+}
+  .bookContent > input{
+      height: 50px;
+      width: 300px;
+      font-size: 15px;
+      padding: 10px;
+      margin: 5px;
+      color: #000;
+      background: #e7e7e7;
+      border: none;
+      
+  }
+
+  .bookContent > div{
+      height: 200px;
+      width: 300px;
+      background: #e7e7e7;
+  }
+
+  .uploadBtn{
+      background: #ec9f10 !important;
+      color:#fff;
+      border: none;
+  }
+
+
+
+/*-------------------------------------------*/
+
+
+  .password, .username{
+    width: 80%;
+    height: 50px;
+    margin-bottom: 10px;
+    outline: none;
+    font-size: 15px;
+    padding: 10px;
+}
+.sub{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: #fff;
+    text-decoration: none;
+}
+
+
+a{color:#ffffff;
+    text-decoration: none;
+}
+
+.login{
+    font-size: 40px;
+    color: #fff;
+    /*text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /*padding: 10px;*/
+    
+}
+
+.login > span{
+    border: 2px solid #fff;
+   // margin: 5px;
+}
+.form-button{
+    width: 80%;
+    height: 50px;
+    outline: none;
+    border: none;
+    background: linear-gradient(187deg, #dddddd 6%, #7a7a7a 100%);
+    color: #fff;
+    font-size: 20px;
+}
+button:hover{
+    background: linear-gradient(187deg, #ec9f10 6%, #8b5d08 100%);
+    //border: 2px solid #fff;
+    //box-shadow: 3px 3px 10px #6186ff;
+}
+.form-container{
+    display: grid;
+    grid-template-areas: "nav nav"
+                        "form form"
+                        
+                        /*"buttons buttons"*/;
+    grid-template-rows: 50px 3fr /*100px*/;
+    height: 400px;
+    width: 350px;
+    margin: 0 auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    
+}
+
+.form-nav{
+    grid-area: nav;
+    background: red;
+    /* -----inner styling -----*/
+    display: grid;
+    grid-template-areas: "login signUp";
+    grid-template-rows: 1fr 1fr;
+    }
+    
+    .login{
+    grid-area: login;
+    background: goldenrod;
+    }
+    .signUp{
+    grid-area: signUp;
+    background: black;
+    }
+    .notactivePane{
+    box-shadow: 3px -5px 5px #021b50 inset;
+    background: #440ab1 !important;
+    }
+    .form-nav > span{
+    font-size: 30px;
+    color: #000000;
+    padding: 10px;
+    text-align: center;
+    background: #25055f;
+    
+    }
+    
+    .form{
+    grid-area: form;
+    background: linear-gradient(180deg, #25055f 6%, rgb(0, 89, 255, 0.3) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+    backdrop-filter: blur(5px);
+    }
+    .buttons{
+    grid-area: buttons;
+    background: blue;
+    }
+    
+
+
+    .profileImage{
+       
+        border-radius: 50%; 
+        height:150px; 
+        width: 150px; 
+        background: #e7e7e7;
+    }
+    .profileImage:hover{
+        background: #686868;
+    }
+
+    .nameInfo{
+        display: flex;
+        flex-direction: row;
+        width: 300px;
+        justify-content: space-around;
+    
+    }
+    .nameInfo > input{
+        width: 140px;
+        height: 50px;
+        font-size: 15px;
+        padding: 10px;
+        background: #e7e7e7;
+    }
+    

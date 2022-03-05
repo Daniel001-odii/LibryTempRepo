@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+<body>
+<div class="form-container">
+    <div class="form-nav">
+        <span style="color: #fff" class="login">Login</span>
+        <span class="signUp notactivePane"><a href="{% url 'signUp' %}">Sign Up</a></span> 
+    </div>
+    <div class="form">
+        <input class="username" placeholder="Username or email" type="username" name="username">
+        <input class="password" placeholder="password" type="password" name="password">
+        <div class="sub"> 
+            <span><input type="checkbox">Remember me</span>
+            
+        </div>
+        <button class="form-button">Sign in</button>
+        <br/>
+        <a href="{% url 'reset' %}">Forgot password</a>
+    </div>
+    <!--<div class="buttons">
+        <input type="button" value="click me">  
+    </div>-->
+</div>
+
+</body>
+    
+
+<style>
+
+</style>
+
+
+{% endblock %}

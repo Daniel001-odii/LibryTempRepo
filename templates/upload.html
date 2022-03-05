@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <main>
+        
+    
+
+<!-- The overlay -->
+<div id="myNav" class="overlay">
+
+    <!-- Button to close the overlay navigation -->
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  
+    <!-- Overlay content -->
+    <div class="overlay-content">
+      <a href="#">Home</a>
+      <a href="#">Upload</a>
+      <a href="#">Contribute</a>
+      <a href="{% url 'libry' %}">Logout</a>
+    </div>
+  
+</div>
+
+
+<!--Main page content---------------------------------->
+        <div class="container">
+            <div class="bookContent">
+                <span>Lend a helping <br/>by uploading a book!</span>
+                <input type="text" class="bookTitle" placeholder="Book title">
+                <input type="text" class="bookTitle" placeholder="Author">
+                <input type="text" class="bookTitle" placeholder="School">
+                <input type="text" class="bookTitle" placeholder="Department">
+                <input type="file" class="bookTitle" >
+                
+                <input type="button" class="uploadBtn" value="Upload">
+                            </div>
+        </div>
+          
+
+    </main>
+
+<!--Main page content---------------------------------->
+
+</body>
+
+<script></script>
+
+
+{% endblock %}

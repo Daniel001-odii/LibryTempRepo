@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <script>/* Open when someone clicks on the span element */
+        function openNav() {
+          document.getElementById("myNav").style.width = "100%";
+        }
+        
+        /* Close when someone clicks on the "x" symbol inside the overlay */
+        function closeNav() {
+          document.getElementById("myNav").style.width = "0%";
+        }
+    </script>
+</head>
+<body>
+    
+    <main>
+        
+    
+
+
+
+
+
+        <div class="container">
+            <div class="Content">
+                <span>
+                Welcome to Libry the best online
+            book repository for students and researchers.
+                </span>
+            </div>
+           <div class="searchBox">
+                
+            
+            <input type="text" placeholder="search libry" class="search">
+                <button>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#fff" class="bi-search" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                      </svg>
+                </button>
+            </div>
+        </div>
+        <div class="cover">
+            <span>Latest Uploads</span>
+          
+        <div class="uploads">
+            <div class="card">
+                <div class="preview"></div>
+                <span  class="bookTitle">A book Upload</span>
+            </div>
+            <div class="card">
+                <div class="preview"></div>
+                <span class="bookTitle">A book Upload</span>
+
+            </div>
+            <div class="card">
+                <div class="preview"></div>
+                <span class="bookTitle">A book Upload</span>
+
+            </div>
+            <div class="card">
+                <div class="preview"></div>
+                <span class="bookTitle">A book Upload</span>
+
+            </div>
+            <div class="card">
+                <div class="preview"></div>
+                <span class="bookTitle">A book Upload</span>
+
+            </div>
+            <div class="card">
+                <div class="preview"></div>
+                <span class="bookTitle">A book Upload</span>
+
+            </div>
+            <!--<div class="card">
+                <div class="preview"></div>
+                <span class="bookTitle">A book Upload</span>
+
+            </div>-->
+        </div>
+        </div>
+
+
+
+
+
+
+
+
+    </main>
+ {% endblock %}
